@@ -3,19 +3,20 @@
 ETL implementado en Apache Spark, diseñado para la extracción, transformación y carga de datos relacionados con la Copa del Mundo
 ## ⚽ Propósito
 
-Quería aprender a usar Apache Spark y como tengo una pasión por el futbol, quize aprovechar para juntar estos 2 dos gustos que tengo por la ingenieria de datos y el futbol.
+Quería aprender a usar Apache Spark y como tengo una pasión por el futbol, quize aprovechar para juntar estos 2 dos gusto``s que tengo por la ingenieria de datos y el futbol.
 
 Entonces a partir de un CSV de los datos de la copa del mundo hice un ETL para poder crear un modelo dimensional que nos ayudara a analizar datos del mundial más especifico en los goles y las tarjetas rojas
 
 
 
 ## 🖱️ Tecnologías usadas
-[![Apache Spark](https://img.shields.io/badge/Apache%20Spark-FDEE21?style=flat-square&logo=apachespark&logoColor=black)](https://spark.apache.org/)
-[![Power Bi](https://img.shields.io/badge/power_bi-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://www.microsoft.com/es-es/power-platform/products/power-bi)
-[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
-[![Google](https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://colab.research.google.com/)
+[![Apache Spark](https://a11ybadges.com/badge?logo=apachespark)](https://spark.apache.org/)
+[![Power BI](https://a11ybadges.com/badge?logo=powerbi)](https://www.microsoft.com/es-es/power-platform/products/power-bi)
+[![Python](https://a11ybadges.com/badge?logo=python)](https://www.python.org/)
+[![Google Colab](https://a11ybadges.com/badge?logo=googlecolab)](https://colab.research.google.com/)
 
-## Uso/Ejemplos
+
+## 💻 Uso/Ejemplos
 
 #### Adjunto el link del csv
 [Football - FIFA World Cup, 1930 - 2022](https://www.kaggle.com/datasets/piterfm/fifa-football-world-cup?select=matches_1930_2022.csv)
@@ -50,21 +51,6 @@ df_clean.write.parquet(parquet_file)
 ```python
 dim_referees = dim_referees.withColumn("id", monotonically_increasing_id() + 1)
 ```
-#### Para asignar un id
-```python
-dim_referees = dim_referees.withColumn("id", monotonically_increasing_id() + 1)
-```
-
-#### Para pasar a dim date selecciono primero la columna y cuantos valores depues de esa columna escojo
-```python
-dim_matches = df_parquet.withColumn("Date",
-    concat(
-        substring(col("Date"), 1, 4),  # Año
-        substring(col("Date"), 6, 2),  # Mes
-        substring(col("Date"), 9, 2)   # Día
-    )
-)
-```
 
 #### Para pasar a dim date selecciono primero la columna y cuantos valores depues de esa columna escojo
 ```python
@@ -93,7 +79,7 @@ En caso que quieran subirlo a una base de datos, les adjunto la documentación
 Para la dimensión de tiempo utilicé este código
 [dim_date](https://gist.github.com/sunnycmf/131a10a17d226e2ffb69)
 
-## Modelo dimensional
+## 📊 Modelo dimensional
 
 ### Tablas del Modelo Dimensional
 El modelo está compuesto por varias tablas de dimensiones (dim) y tablas de hechos (fact).
@@ -107,3 +93,5 @@ El modelo está compuesto por varias tablas de dimensiones (dim) y tablas de hec
 ### Hechos
 + f_goals
 + f_red_cards
+
+
