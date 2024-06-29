@@ -94,4 +94,15 @@ El modelo está compuesto por varias tablas de dimensiones (dim) y tablas de hec
 + f_goals
 + f_red_cards
 
+## Modelo dimensional
+
+Así es como se uniría el modelo dimensional.
+
+![Imagen 1](images/Modelo.png)
+
+## Dashborad 
+
+Y al final hacemos el dashboard.
+
+![Imagen 2](images/Dashborad.png)
 
